@@ -1,0 +1,49 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      jsmethod-extra:
+        specifier: ^2.0.7
+        version: 2.0.7
+      nodeman:
+        specifier: ^1.1.2
+        version: 1.1.2
+      typescript:
+        specifier: ^5.5.4
+        version: 5.5.4
+
+packages:
+
+  colors@1.4.0:
+    resolution: {integrity: sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==}
+    engines: {node: '>=0.1.90'}
+
+  jsmethod-extra@2.0.7:
+    resolution: {integrity: sha512-DzKN7DP5ziJCJqCOYCwhOXlKYVKOvcDAvd6By3WIH/ZezNg2v/0HDFkknIGB7Q2wi8QZSo58HgPDr47C78UBBw==}
+
+  nodeman@1.1.2:
+    resolution: {integrity: sha512-RpRpDnMI4TN/EPX6+my7f02585I14AQO8YrHTkO1aTiC65+sMa5G3NwQplN6kwue1njxWiaSz2UwCnDbwkLgeQ==}
+    hasBin: true
+
+  typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  colors@1.4.0: {}
+
+  jsmethod-extra@2.0.7: {}
+
+  nodeman@1.1.2:
+    dependencies:
+      colors: 1.4.0
+
+  typescript@5.5.4: {}

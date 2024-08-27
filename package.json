@@ -1,0 +1,17 @@
+{
+  "name": "fast-logger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsmethod-extra": "^2.0.7",
+    "nodeman": "^1.1.2",
+    "typescript": "^5.5.4"
+  }
+}

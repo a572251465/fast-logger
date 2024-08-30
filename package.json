@@ -1,5 +1,5 @@
 {
-  "name": "fast-logger",
+  "name": "logger-extra",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,6 +12,7 @@
   "dependencies": {
     "jsmethod-extra": "^2.0.7",
     "nodeman": "^1.1.2",
+    "prettier": "^3.3.3",
     "typescript": "^5.5.4"
   }
 }

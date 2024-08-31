@@ -31,7 +31,6 @@ export function BrowserLogPlugin(
   obj?: PluginInstanceParamType,
 ): PluginInstanceReturnType {
   const returnInfo: Omit<PluginInstanceReturnType, "setup"> = {
-    name: "browserLogPlugin",
     channel: "*",
     signal: "*",
   };

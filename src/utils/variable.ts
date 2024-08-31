@@ -1,8 +1,6 @@
 import { isLocal } from "./tools";
 import { LoggerGlobalType, PluginInstanceParamType } from "../type";
 
-export const allChannelInfo = new Map<string, Array<[string, Array<string>]>>();
-export const pluginNameCache = new Set<string>();
 export const expressionCache = [
   "$appName",
   "$time",

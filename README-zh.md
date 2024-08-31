@@ -1,16 +1,16 @@
 # logger-extra
 
-> Simple and powerful log output plugin, Help you troubleshoot errors
+> 简单 且 强大的日志输出插件, 帮助你迅速定位错误
 
-## why choose logger-extra
+## 为什么选择 logger-extra
 
-- powerful plugin system
-- support tree shaking
-- support logger isolation by channel
-- browser logger plugin support persistence
-- dynamically differentiate the environment, easy to locate bugs
+- 强大的插件系统
+- 支持 tree shaking
+- 支持 日志按照channel 进行隔离
+- 浏览器插件支持日志持久化
+- 动态区分环境，易于定位错误
 
-## install
+## 安装
 
 - pnpm
 
@@ -30,7 +30,7 @@ npm install logger-extra
 yarn add logger-extra
 ```
 
-## simple use
+## 简单使用
 
 ```javascript
 import {getLoggerFactory, BrowserLogPlugin} from "logger-extra";
@@ -46,19 +46,19 @@ const Logger = LoggerFactory.getLogger("channel-1");
 Logger.warn("hehe1"); //  [myProject] 2024-08-31 16:58:20 [channel-1] warn hehe1
 ```
 
-## api format
+## api 格式介绍
 
 ### getLoggerFactory
 
-#### params
+#### 参数
 
-| field   | required | type            | default value                            | description                               |
-|---------|----------|-----------------|------------------------------------------|-------------------------------------------|
-| appName | no       | string          | ""                                       | program name                              |
-| tpl     | no       | string          | $appName $time $channel $signal $message | print template                            |
-| plugins | yes      | Array<Function> | -                                        | subscribe message plugin. see plugin page |
+| field   | required | type            | default value                            | description         |
+|---------|----------|-----------------|------------------------------------------|---------------------|
+| appName | no       | string          | ""                                       | 程序名称                |
+| tpl     | no       | string          | $appName $time $channel $signal $message | 日志输出模板              |
+| plugins | yes      | Array<Function> | -                                        | 订阅消息的插件, 详细见 plugin |
 
-#### return
+#### 返回值
 
 `LoggerFactory` instance
 
@@ -76,9 +76,9 @@ const LoggerFactory = getLoggerFactory({
 
 #### params
 
-| field   | required | default value | description                                  |
-|---------|----------|---------------|----------------------------------------------|
-| channel | no       | ""            | message channel, Basis for message isolation |
+| field   | required | default value | description          |
+|---------|----------|---------------|----------------------|
+| channel | no       | ""            | 消息通道, 日志消息隔离 按照通道进行的 |
 
 #### return
 
@@ -121,16 +121,15 @@ Logger.info("test");
 
 ## Plugin Introduction
 
-> `logger-extra` Multi plugin logger system， allow the plugin install and
-> uninstall, all message outputs depend on plugins。`logger-extra` just
-> responsible for broadcasting
-> so, custom plugin format as follows
+> `logger-extra` 多插件日志系统， 允许插件 安装 以及卸载
+> , 所有的消息输出都是依赖于插件。`logger-extra` 仅仅为了广播消息。
+> 所以 自定义插件的格式如下：
 
-| field   | required | description                      |
-|---------|----------|----------------------------------|
-| channel | no       | subscription chanel              |
-| signal  | no       | subscription signal              |
-| setup   | yes      | received message callback method |
+| field   | required | description |
+|---------|----------|-------------|
+| channel | no       | 订阅的通道       |
+| signal  | no       | 订阅的信号       |
+| setup   | yes      | 接受消息的回调方法   |
 
 `TS type definition`
 
@@ -165,16 +164,16 @@ export interface PluginInstanceReturnType {
 
 ##### params
 
-| field      | required | default value      | description                 |
-|------------|----------|--------------------|-----------------------------|
-| persist    | no       | false              | output log persistence      |
-| isPrintLog | no       | Built in functions | Whether to print or not log |
+| field      | required | default value | description                |
+|------------|----------|---------------|----------------------------|
+| persist    | no       | false         | 输出日志的持久化，最多允许保存300条消息，滚动覆盖 |
+| isPrintLog | no       | 内置函数          | 取决于合适打印日志                  |
 
 ##### return
 
-`see Plugin Introduction`
+`见 插件介绍`
 
-#### Built-in functions
+#### 内置函数
 
 ```typescript
 export function isLocal() {
@@ -188,10 +187,9 @@ export function isLocal() {
 }
 ```
 
-## Distinguish environmental cases
+## 区分环境的案例
 
-> You can dynamically determine whether to print logs by monitoring variables
-> under the window
+> 可以通过监听window下的变量 动态决定是否打印log
 
 ```javascript
 function isPrintLog() {

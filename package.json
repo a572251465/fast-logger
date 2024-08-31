@@ -1,6 +1,6 @@
 {
   "name": "logger-extra",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "Simple and powerful log output plugin, Help you troubleshoot errors",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -10,6 +10,7 @@
     "build": "rollup --config rollup.config.ts --configPlugin typescript"
   },
   "files": [
+    "imgs",
     "dist",
     "typings"
   ],

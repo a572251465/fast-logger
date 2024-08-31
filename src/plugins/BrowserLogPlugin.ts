@@ -3,8 +3,9 @@ import {
   PluginInstanceReturnType,
   TypeRange,
 } from "../type";
-import { strFormat, valueOrDefault } from "jsmethod-extra";
+import { isEmpty, isNotEmpty, strFormat, valueOrDefault } from "jsmethod-extra";
 import { defaults, signalColorCache } from "../utils/variable";
+import { useStore } from "../persist";
 
 function insertColorInStr(tpl: Array<string>, msgs: Array<string>) {
   const idx = tpl.indexOf("$signal"),
@@ -25,6 +26,18 @@ function insertColorInStr(tpl: Array<string>, msgs: Array<string>) {
     `font-size: 20px; color: ${signalColorCache.get(type)};`,
     "",
   ];
+}
+
+async function dataPersistHandler(message: string) {
+  if (isEmpty(message)) return;
+
+  const [addItemHandler, deleteItemHandler, getAllItemHandler] = useStore();
+  const values = await getAllItemHandler(),
+    allKeys = isEmpty(values) ? [] : Object.keys(values!);
+
+  if (isNotEmpty(values) && allKeys.length >= 300)
+    await deleteItemHandler(allKeys[0]);
+  await addItemHandler(message, message);
 }
 
 export function BrowserLogPlugin(
@@ -48,6 +61,9 @@ export function BrowserLogPlugin(
 
       const { tpl } = params;
       const tplArr = tpl.split(" ");
+
+      if (isNotEmpty(obj) && obj!.persist) dataPersistHandler(message);
+
       if (tplArr.includes("$signal")) {
         console.log(...insertColorInStr(tplArr, message.split(" ")));
         return;

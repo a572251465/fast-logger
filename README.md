@@ -4,6 +4,8 @@
 
 English | [简体中文](https://github.com/a572251465/fast-logger/blob/main/README-zh.md)
 
+![base.png](imgs/base.png)
+
 ## why choose logger-extra
 
 - powerful plugin system

@@ -1,6 +1,6 @@
 {
   "name": "logger-extra",
-  "version": "0.0.1-beta.1",
+  "version": "0.0.1-beta.2",
   "description": "Simple and powerful log output plugin, Help you troubleshoot errors",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -28,6 +28,7 @@
     "@rollup/plugin-typescript": "^11.1.6",
     "jsmethod-extra": "^2.0.7",
     "nodeman": "^1.1.2",
+    "localforage": "^1.10.0",
     "prettier": "^3.3.3",
     "rollup": "^4.18.0",
     "rollup-plugin-del": "^1.0.1",

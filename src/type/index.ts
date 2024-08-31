@@ -1,21 +1,33 @@
-// 导出类型范围
 export const enum TypeRange {
   INFO = "info",
   ERROR = "error",
-  WARNING = "warning",
+  DEBUG = "debug",
+  WARN = "warn",
 }
 
-// 插件类型实例
-export interface PluginInstanceType {
+export type BaseParamSignalInfo = {
   channel: string;
+  signal: Array<TypeRange>;
+};
+
+export type PluginInstanceParamType = Partial<{
+  persist: boolean;
+  isPrintLog: (params: BaseParamSignalInfo) => boolean;
+}>;
+
+export interface PluginInstanceReturnType {
+  channel: Array<string> | "*";
   signal: Array<TypeRange> | "*";
   setup: (
     message: string,
-    params: {
-      channel: string;
-      signal: Array<TypeRange>;
+    params: BaseParamSignalInfo & {
+      tpl: string;
     },
   ) => void;
 }
 
-export type LoggerConfigInfo = {};
+export interface LoggerGlobalType {
+  tpl?: string;
+  appName?: string;
+  plugins: Array<PluginInstanceReturnType>;
+}

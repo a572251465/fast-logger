@@ -2,6 +2,8 @@
 
 > Simple and powerful log output plugin, Help you troubleshoot errors
 
+English | [简体中文](https://github.com/a572251465/fast-logger/blob/main/README-zh.md)
+
 ## why choose logger-extra
 
 - powerful plugin system
@@ -45,6 +47,8 @@ const Logger = LoggerFactory.getLogger("channel-1");
 
 Logger.warn("hehe1"); //  [myProject] 2024-08-31 16:58:20 [channel-1] warn hehe1
 ```
+
+see [logger-extra Demo](https://gitee.com/li_haohao_1/logger-extra-demo)
 
 ## api format
 

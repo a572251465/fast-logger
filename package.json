@@ -1,18 +1,39 @@
 {
   "name": "logger-extra",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1-beta.1",
+  "description": "Simple and powerful log output plugin, Help you troubleshoot errors",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "typings": "typings/index.d.ts",
   "scripts": {
-    "watch": "tsc --watch"
+    "watch": "tsc --watch",
+    "build": "rollup --config rollup.config.ts --configPlugin typescript"
   },
-  "keywords": [],
-  "author": "",
+  "files": [
+    "dist",
+    "typings"
+  ],
+  "keywords": [
+    "logger",
+    "logger plugin",
+    "logger print"
+  ],
+  "homepage": "https://github.com/a572251465/fast-logger",
+  "author": "lihh",
   "license": "ISC",
   "dependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
     "jsmethod-extra": "^2.0.7",
     "nodeman": "^1.1.2",
     "prettier": "^3.3.3",
+    "rollup": "^4.18.0",
+    "rollup-plugin-del": "^1.0.1",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.7.0",
     "typescript": "^5.5.4"
   }
 }

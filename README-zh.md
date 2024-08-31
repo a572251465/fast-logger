@@ -2,6 +2,8 @@
 
 > 简单 且 强大的日志输出插件, 帮助你迅速定位错误
 
+简体中文 | [English](https://github.com/a572251465/fast-logger/blob/main/README.md)
+
 ## 为什么选择 logger-extra
 
 - 强大的插件系统
@@ -45,6 +47,8 @@ const Logger = LoggerFactory.getLogger("channel-1");
 
 Logger.warn("hehe1"); //  [myProject] 2024-08-31 16:58:20 [channel-1] warn hehe1
 ```
+
+参照 [logger-extra Demo](https://gitee.com/li_haohao_1/logger-extra-demo)
 
 ## api 格式介绍
 
